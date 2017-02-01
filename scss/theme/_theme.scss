@@ -1,0 +1,26 @@
+$themes: ( 'default': ( 'primary': #2196F3, 'secondary': #9E9E9E), 'dragon': ( 'primary': firebrick, 'secondary': black)) !default;
+// Initialize our variables as `null` so that when used outside of `themify`,
+// they actually output nothing.
+$color-primary: null;
+$color-secondary: null;
+/// Themify mixin
+/// @author Hugo Giraudel
+/// @param {Map} $themes [$themes] - Map of themes to use
+@mixin themify($themes: $themes) {
+    // Iterate over the themes
+    @each $theme,
+    $colors in $themes {
+        // Create a selector (e.g. `.media.theme-unicorn, .theme-unicorn .media`)
+        &.theme-#{$theme},
+        .theme-#{$theme} & {
+            // Set the theme variables with `!global`
+            $color-primary: map-get($colors, 'primary') !global;
+            $color-secondary: map-get($colors, 'secondary') !global;
+            // Output user content
+            @content;
+            // Unset the theme variables with `!global`
+            $color-primary: null !global;
+            $color-secondary: null !global;
+        }
+    }
+}

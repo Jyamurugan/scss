@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>
+        Base Css Demo
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body class="theme-default">
+    <h1>Buttons</h1>
+    <button class="button">cancel</button>
+    <button class="button primary">proceed</button>
+    <button class="button rounded">cancel</button>
+    <button class="button rounded primary" onclick="changeTheme()">Change Theme</button>
+    <h1>Panels</h1>
+    <div style="width: 300px;">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="panel-title">Title of the content</div>
+                <div class="panel-controls">
+                    x y z
+                </div>
+            </div>
+            <div class="panel-body">
+                Sint esse duis consectetur est labore Lorem deserunt. Qui cupidatat nulla aute nostrud id irure. Sunt anim sunt ea occaecat. Id irure excepteur sunt anim incididunt aliqua consectetur. Non ea cupidatat officia deserunt laboris quis commodo sit aute mollit.
+                Dolor aute ex laboris ut enim officia laborum ullamco irure proident laboris adipisicing incididunt exercitation.
+            </div>
+        </div>
+    </div>
+    <br />
+    <div style="width: 400px;">
+        <div class="panel primary">
+            <div class="panel-heading">
+                <div class="panel-title">CWS</div>
+                <div class="panel-controls">
+                    x y z
+                </div>
+            </div>
+            <div class="panel-body">
+                Sint esse duis consectetur est labore Lorem deserunt. Qui cupidatat nulla aute nostrud id irure. Sunt anim sunt ea occaecat. Id irure excepteur sunt anim incididunt aliqua consectetur. Non ea cupidatat officia deserunt laboris quis commodo sit aute mollit.
+                Dolor aute ex laboris ut enim officia laborum ullamco irure proident laboris adipisicing incididunt exercitation.
+            </div>
+        </div>
+    </div>
+    <br />
+    <div style="width: 200px;">
+        <div class="panel secondary">
+            <div class="panel-heading">
+                <div class="panel-title">Network Dashboard</div>
+                <div class="panel-controls">
+                    x y z
+                </div>
+            </div>
+            <div class="panel-body">
+                Sint esse duis consectetur est labore Lorem deserunt. Qui cupidatat nulla aute nostrud id irure. Sunt anim sunt ea occaecat. Id irure excepteur sunt anim incididunt aliqua consectetur. Non ea cupidatat officia deserunt laboris quis commodo sit aute mollit.
+                Dolor aute ex laboris ut enim officia laborum ullamco irure proident laboris adipisicing incididunt exercitation.
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.body.className = 'theme-default';
+    var themeList = [
+        'theme-default',
+        'theme-dragon'
+    ]
+
+    function changeTheme() {
+        var themeIndex = themeList.indexOf(document.body.className);
+        document.body.className = themeList[((themeIndex + 1) % themeList.length)];
+    }
+</script>
+
+</html>
